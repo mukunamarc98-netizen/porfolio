@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marc Mukuna | Portfolio & CV Professionnel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #000; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .video-card:hover video { transform: scale(1.05); opacity: 1; }
+        .timeline-line::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: rgba(16, 185, 129, 0.3); }
+        
+        /* Fenêtre Modale Vidéo */
+        #videoModal { display: none; }
+        #videoModal.active { display: flex; }
+
+        /* Style personnalisé pour les inputs du formulaire */
+        .form-input {
+            background: transparent;
+            border-bottom: 2px solid rgba(0,0,0,0.2);
+            transition: border-color 0.3s;
+            padding: 1rem 0;
+            outline: none;
+            width: 100%;
+        }
+        .form-input:focus {
+            border-bottom-color: #000;
+        }
+    </style>
+</head>
+<body class="text-white selection:bg-emerald-500 selection:text-black">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-[100] px-6 py-6 flex justify-between items-center backdrop-blur-md bg-black/70 border-b border-white/10">
+        <div class="text-3xl font-black tracking-tighter text-emerald-500">M<span class="text-white">M</span></div>
+        <div class="hidden lg:flex space-x-6 text-xs uppercase tracking-[0.2em] font-bold">
+            <a href="#about" class="hover:text-emerald-400 transition">Bio</a>
+            <a href="#experience" class="hover:text-emerald-400 transition">Parcours</a>
+            <a href="#skills" class="hover:text-emerald-400 transition">Compétences</a>
+            <a href="#realisations" class="hover:text-emerald-400 transition underline decoration-emerald-500 underline-offset-8">Projets</a>
+            <a href="#references" class="hover:text-emerald-400 transition">Références</a>
+            <a href="#contact" class="px-6 py-2 bg-emerald-600 text-black hover:bg-emerald-400 transition rounded-sm">Contact</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO (IMAGE ET VIDÉO D'ARRIÈRE-PLAN) -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- IMAGE D'ARRIÈRE-PLAN -->
+            <img src="/Users/marcmukuna/Desktop/Porfolio Marc /img/i.JPG" alt="Background Marc Mukuna" class="absolute inset-0 w-full h-full object-cover opacity-30">
+            
+            <!-- VIDÉO D'ARRIÈRE-PLAN -->
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-40">
+                <source src="VIDEO/showreel.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-[9rem] font-black uppercase tracking-tighter mb-4 leading-none">
+                Marc <span class="text-emerald-500">Mukuna</span>
+            </h1>
+            <p class="text-xl md:text-3xl font-light tracking-[0.3em] uppercase opacity-80 mb-12 italic">Vidéaste • Artiste 3D • Pilote de Drone</p>
+            <a href="#realisations" class="px-12 py-5 border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-all duration-500 font-black uppercase text-sm tracking-widest">Découvrir mes projets</a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BIOGRAPHIE -->
+    <section id="about" class="py-32 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20 items-start">
+            <div class="relative group sticky top-32">
+                <div class="absolute -inset-6 border-2 border-emerald-500/20 translate-x-6 translate-y-6 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
+                <img src="VIDEO/marc.jpg" alt="Marc Mukuna" class="relative z-10 grayscale group-hover:grayscale-0 transition duration-1000 w-full h-[700px] object-cover shadow-2xl rounded-sm">
+            </div>
+            <div class="md:pl-10">
+                <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-8">Profil Personnel</h2>
+                <h3 class="text-5xl md:text-6xl font-serif italic mb-12 leading-tight">Basé à Goma, République Démocratique du Congo.</h3>
+                <div class="space-y-10 text-zinc-300 text-lg md:text-xl leading-relaxed font-light text-justify">
+                    <p>Je suis un Vidéaste et Monteur Vidéo passionné, spécialisé dans la production complète de contenus visuels, allant de la capture d'images à la post-production avancée. En tant qu'éditeur vidéo, je gère l'intégralité du processus créatif pour transformer des idées en récits visuels percutants.</p>
+                    <p>Également Artiste 3D et pilote de drone, je combine des prises de vues aériennes uniques avec des environnements numériques immersifs créés sous Blender et Unity. Cette polyvalence me permet de concevoir des expériences visuelles hybrides, mêlant réel et virtuel avec une forte dimension narrative.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: EXPÉRIENCE PROFESSIONNELLE -->
+    <section id="experience" class="py-32 bg-zinc-950 border-y border-white/10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20 text-center">Expérience Professionnelle</h2>
+            <div class="relative timeline-line pl-12 space-y-20">
+                <!-- Exp 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[54px] top-2 w-5 h-5 rounded-full bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.6)]"></div>
+                    <span class="text-emerald-500 text-sm font-bold uppercase">Nov 2024 – Janv 2026</span>
+                    <h4 class="text-3xl md:text-4xl font-black mt-2 uppercase italic">Monteur Vidéo & Artiste 3D</h4>
+                    <p class="text-white text-2xl font-light">Adyne Netherlands</p>
+                </div>
+                <!-- Exp 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[54px] top-2 w-5 h-5 rounded-full bg-emerald-500 opacity-40"></div>
+                    <span class="text-emerald-500 text-sm font-bold uppercase">Juil 2022 – Sept 2024</span>
+                    <h4 class="text-3xl md:text-4xl font-black mt-2 uppercase italic">Chargé des Opérations</h4>
+                    <p class="text-white text-2xl font-light">Wito XR Studio</p>
+                </div>
+                <!-- Exp 3 -->
+                <div class="relative">
+                    <div class="absolute -left-[54px] top-2 w-5 h-5 rounded-full bg-emerald-500 opacity-40"></div>
+                    <span class="text-emerald-500 text-sm font-bold uppercase">Janv 2022 – Juin 2022</span>
+                    <h4 class="text-3xl md:text-4xl font-black mt-2 uppercase italic">Stage Professionnel</h4>
+                    <p class="text-white text-2xl font-light">Génération Épanouie (GEP NGO), Bukavu</p>
+                </div>
+                <!-- Exp 4 -->
+                <div class="relative">
+                    <div class="absolute -left-[54px] top-2 w-5 h-5 rounded-full bg-emerald-500 opacity-40"></div>
+                    <span class="text-emerald-500 text-sm font-bold uppercase">Sept 2017 – Sept 2018</span>
+                    <h4 class="text-3xl md:text-4xl font-black mt-2 uppercase italic">Coordonnateur Social & Culturel</h4>
+                    <p class="text-white text-2xl font-light">Podium Populaire des Jeunes (PPJ NGO)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: EDUCATION -->
+    <section id="education" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20 text-center">Éducation & Cursus</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="p-10 border border-white/10 bg-zinc-900/40">
+                <span class="text-emerald-500 text-lg font-bold italic">2020 – 2021</span>
+                <h4 class="text-2xl font-bold mt-4 uppercase">Licence en Développement Durable</h4>
+                <p class="text-zinc-400 mt-2 text-xl font-light italic">University of Nouvelle Pâques (UNP), Bukavu</p>
+            </div>
+            <div class="p-10 border border-white/10 bg-zinc-900/40">
+                <span class="text-emerald-500 text-lg font-bold italic">2018 – 2019</span>
+                <h4 class="text-2xl font-bold mt-4 uppercase">Graduat en Sciences Sociales</h4>
+                <p class="text-zinc-400 mt-2 text-xl font-light italic">UEA, Bukavu</p>
+            </div>
+            <div class="p-10 border border-white/10 bg-zinc-900/40">
+                <span class="text-emerald-500 text-lg font-bold italic">2015 – 2016</span>
+                <h4 class="text-2xl font-bold mt-4 uppercase">Diplôme d'État en Pédagogie</h4>
+                <p class="text-zinc-400 mt-2 text-xl font-light italic">EDAC / ISGEA Bukavu</p>
+            </div>
+            <div class="p-10 border border-white/10 bg-zinc-900/40">
+                <span class="text-emerald-500 text-lg font-bold italic">2008 – 2009</span>
+                <h4 class="text-2xl font-bold mt-4 uppercase">Certificat d'Études Primaires</h4>
+                <p class="text-zinc-400 mt-2 text-xl font-light italic">Complexe Scolaire Hosanna, Bukavu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FORMATIONS -->
+    <section class="py-32 bg-zinc-950 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-zinc-100 text-center">
+            <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20">Formations Spécialisées</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-10 bg-black border border-white/10 flex flex-col items-center">
+                    <div class="text-5xl font-black text-emerald-500/20 mb-4 italic">2021</div>
+                    <p class="text-2xl font-light leading-relaxed">Protection des Aires Protégées et écosystèmes au Sud-Kivu.</p>
+                </div>
+                <div class="p-10 bg-black border border-white/10 flex flex-col items-center">
+                    <div class="text-5xl font-black text-emerald-500/20 mb-4 italic">2022</div>
+                    <p class="text-2xl font-light leading-relaxed">Spécialisation en Montage Vidéo et Design 3D (Blender & Unity).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: SKILLS -->
+    <section id="skills" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20 text-center">Compétences & Aptitudes</h2>
+        <div class="grid md:grid-cols-2 gap-24">
+            <div>
+                <h4 class="text-emerald-500 font-black text-xs uppercase mb-10 tracking-[0.3em]">Expertises Techniques</h4>
+                <ul class="space-y-6 text-xl md:text-2xl font-light italic">
+                    <li class="border-b border-white/10 pb-4 flex justify-between uppercase font-bold tracking-tighter">Modélisation d'objets 3D <span>01</span></li>
+                    <li class="border-b border-white/10 pb-4 flex justify-between uppercase font-bold tracking-tighter">Création d'environnements 3D <span>02</span></li>
+                    <li class="border-b border-white/10 pb-4 flex justify-between uppercase font-bold tracking-tighter">Pilotage Drone <span>03</span></li>
+                    <li class="border-b border-white/10 pb-4 flex justify-between uppercase font-bold tracking-tighter">Vidéographie <span>04</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-emerald-500 font-black text-xs uppercase mb-10 tracking-[0.3em]">Qualités Professionnelles</h4>
+                <div class="flex flex-wrap gap-4 uppercase font-bold tracking-tighter italic text-zinc-100">
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Créativité</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Responsabilité</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Travail sous pression</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Diplomatie</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Esprit d'équipe</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Excellente Communication</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Capacités d'analyse & organisation</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Souci du détail</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Négociation & Compromis</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Ouverture d'esprit</span>
+                    <span class="px-6 py-3 bg-white/5 text-lg border border-white/10">Gestion du temps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: PROJETS -->
+    <section id="realisations" class="py-32 bg-zinc-950 border-y border-white/10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20 text-center">Sélection de Projets</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Projet 1 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/goma.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/goma.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40">
+                            <h4 class="text-2xl font-black uppercase italic">This is Goma</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/femmes.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/femmes.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40">
+                            <h4 class="text-2xl font-black uppercase italic">Coin des Femmes</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/itw.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/itw.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40 text-zinc-100">
+                            <h4 class="text-2xl font-black uppercase italic">Wezesha</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Projet 4 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/sem.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/sem.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40 text-zinc-100">
+                            <h4 class="text-2xl font-black uppercase italic">sem</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Projet 5 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/interview.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/intervew 2.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40 text-zinc-100">
+                            <h4 class="text-2xl font-black uppercase italic">intervew</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Projet 6 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/bb.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/bb.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40 text-zinc-100">
+                            <h4 class="text-2xl font-black uppercase italic">demo</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Projet 7 -->
+                <div class="video-card group relative overflow-hidden bg-zinc-900 cursor-pointer shadow-2xl" onclick="openVideo('VIDEO/wezeshaa.mp4')">
+                    <div class="aspect-video relative overflow-hidden border border-white/10">
+                        <video loop muted playsinline class="w-full h-full object-cover opacity-50 transition duration-700">
+                            <source src="VIDEO/wezeshaa.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 bg-black/40 text-zinc-100">
+                            <h4 class="text-2xl font-black uppercase italic">wezeshaa</h4>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/20">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                <div class="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-emerald-500 border-b-[10px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: RÉFÉRENCES -->
+    <section id="references" class="py-32 px-6 max-w-7xl mx-auto text-zinc-100">
+        <h2 class="text-emerald-500 text-sm font-black uppercase tracking-[0.5em] mb-20 text-center italic">Références Professionnelles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Réf 1 -->
+            <div class="p-8 bg-zinc-900/60 border border-white/10">
+                <h5 class="font-bold text-2xl mb-4 italic">Joseph Akilimali</h5>
+                <p class="text-emerald-500 text-xs uppercase font-black mb-6">SG – Génération Épanouie</p>
+                <p class="text-zinc-300 text-lg italic mb-2">+243 853 994 257</p>
+                <p class="text-zinc-400 text-sm truncate font-light italic">geprdc@gmail.com</p>
+            </div>
+            <!-- Réf 2 -->
+            <div class="p-8 bg-zinc-900/60 border border-white/10">
+                <h5 class="font-bold text-2xl mb-4 italic">Samy Jean Takumbula</h5>
+                <p class="text-emerald-500 text-xs uppercase font-black mb-6">Président – PPJ NGO</p>
+                <p class="text-zinc-300 text-lg italic mb-2">+243 999 650 666</p>
+                <p class="text-zinc-400 text-sm truncate font-light italic">ssamyjeantakimbla@gmail.com</p>
+            </div>
+            <!-- Réf 3 -->
+            <div class="p-8 bg-zinc-900/60 border border-white/10">
+                <h5 class="font-bold text-2xl mb-4 italic">Junior Bulabula</h5>
+                <p class="text-emerald-500 text-xs uppercase font-black mb-6">CEO – Wito XR Studio</p>
+                <p class="text-zinc-300 text-lg italic mb-2">+33 7 545 630 71</p>
+                <p class="text-zinc-400 text-sm truncate font-light italic">juni@witoholdings.com</p>
+            </div>
+            <!-- Réf 4 -->
+            <div class="p-8 bg-zinc-900/60 border border-white/10">
+                <h5 class="font-bold text-2xl mb-4 italic uppercase">Elie Pierre Kanda</h5>
+                <p class="text-emerald-500 text-xs uppercase font-black mb-6">CEO – Adyne Netherlands</p>
+                <p class="text-zinc-300 text-lg italic mb-2">+31 6 53 90 50 46</p>
+                <p class="text-zinc-400 text-sm truncate font-light italic">eliepierrekm@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: CONTACT AVEC FORMULAIRE -->
+    <section id="contact" class="py-32 bg-emerald-500 text-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-none italic">Contactez- moi.</h2>
+            </div>
+
+            <!-- FORMULAIRE DE CONTACT DIRECT -->
+            <div class="max-w-3xl mx-auto mb-24">
+                <form action="https://formspree.io/f/mukunamarc98@gmail.com" method="POST" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">Votre Nom</label>
+                            <input type="text" name="name" required class="form-input placeholder:text-black/30" placeholder="Marc Antoine">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">Email de contact</label>
+                            <input type="email" name="email" required class="form-input placeholder:text-black/30" placeholder="exemple@mail.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">Votre Projet / Message</label>
+                        <textarea name="message" rows="4" required class="form-input placeholder:text-black/30" placeholder="Dites-moi tout sur votre vision..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-black text-emerald-500 font-black uppercase tracking-[0.3em] hover:bg-zinc-900 transition-all duration-300 shadow-xl">Envoyer le message direct</button>
+                </form>
+            </div>
+            
+            <!-- INFOS SECONDAIRES -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-xl md:text-2xl font-bold mb-16">
+                <div>
+                    <span class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">Email</span>
+                    <a href="mailto:mukunamarc98@gmail.com" class="italic underline underline-offset-[12px] decoration-2 break-all">mukunamarc98@gmail.com</a>
+                </div>
+                <div>
+                    <span class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">Mobile Contact</span>
+                    <a href="tel:+243841565344" class="italic underline underline-offset-[12px] decoration-2">+243 841 565 344</a>
+                </div>
+                <div>
+                    <span class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">WhatsApp Contact</span>
+                    <a href="https://wa.me/243972430127" target="_blank" class="italic underline underline-offset-[12px] decoration-2">+243 972 430 127</a>
+                </div>
+            </div>
+
+            <!-- LinkedIn Profile -->
+            <div class="mt-12 pt-8 border-t border-black/10 text-center">
+                <span class="block text-xs uppercase font-black tracking-widest opacity-60 mb-2 italic">LinkedIn Profile</span>
+                <a href="https://www.linkedin.com/in/marc-mukuna-55118a3b5" target="_blank" class="italic underline underline-offset-[12px] decoration-2 text-xl md:text-3xl">Marc Mukuna</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 text-center text-zinc-600 text-sm uppercase tracking-[0.5em] font-bold border-t border-white/5">
+        &copy; 2026 Marc Mukuna • Goma, RD Congo
+    </footer>
+
+    <!-- MODAL VIDEOS -->
+    <div id="videoModal" class="fixed inset-0 z-[200] bg-black/95 items-center justify-center p-4">
+        <button onclick="closeVideo()" class="absolute top-10 right-10 text-white text-6xl font-light hover:text-emerald-500 transition z-[210]">&times;</button>
+        <div class="w-full max-w-6xl aspect-video bg-black relative shadow-2xl border border-white/10">
+            <video id="modalVideo" controls class="w-full h-full" preload="auto">
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- SCRIPT JS -->
+    <script>
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const videoSource = document.getElementById('videoSource');
+
+        function openVideo(src) {
+            videoSource.src = src;
+            modalVideo.load();
+            modal.classList.add('active');
+            modalVideo.play();
+        }
+
+        function closeVideo() {
+            modal.classList.remove('active');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            videoSource.src = ""; 
+        }
+
+        modal.onclick = function(e) { if (e.target === modal) closeVideo(); }
+    </script>
+
+</body>
+</html>
